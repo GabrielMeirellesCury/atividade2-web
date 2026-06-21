@@ -11,12 +11,16 @@ function PotionForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    potionsApi.postPotions(formData).then((result) => {
-      if (result.status == 200 || result.status == 201) {
-        props.addNewPotion(result.data)
-        setFormData({ name: "", description: "", image: "", price: "" })
-      }
-    })
+    try {
+      potionsApi.postPotions(formData).then((result) => {
+        if (result.status == 200 || result.status == 201) {
+          props.addNewPotion(result.data)
+          setFormData({ name: "", description: "", image: "", price: "" })
+        }
+      })
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   function handleChange(event) {
