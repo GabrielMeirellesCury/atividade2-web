@@ -41,7 +41,7 @@ atividade2-web/
 
 ## Pré-requisitos
 
-- [Node.js](https://nodejs.org/) instalado na máquina
+- Node.js instalado na máquina
 
 ## Como executar
 
